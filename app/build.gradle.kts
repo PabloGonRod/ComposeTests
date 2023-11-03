@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.pgonrod.composetest"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.pgonrod.composetest"
