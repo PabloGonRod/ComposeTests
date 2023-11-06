@@ -67,15 +67,195 @@ fun Content() {
             View02()
         }
         item {
-            View01()
+            View03()
         }
         item {
-            View01()
-        }
-        item {
-            View01()
+            View04()
         }
     }
+}
+
+@Composable
+fun View04() {
+        var counter4 by rememberSaveable {
+            mutableStateOf(0)
+        }
+
+        Card(
+            colors = CardDefaults.cardColors(
+                containerColor = colorResource(id = R.color.background_card_04)
+            ),
+            modifier = Modifier.padding(16.dp, 12.dp)
+        ) {
+            ConstraintLayout {
+                val (title, image, description, toolbar4, likes, likesIcon) = createRefs()
+
+                Toolbar04(Modifier.constrainAs(toolbar4) {
+                    top.linkTo(parent.top)
+                    start.linkTo(parent.start)
+                })
+
+                Image(painter = painterResource(id = R.drawable.view01),
+                    contentDescription = stringResource(id = R.string.description_image),
+                    modifier = Modifier.constrainAs(image) {
+                        top.linkTo(toolbar4.bottom)
+                        start.linkTo(title.start)
+                        end.linkTo(title.end)
+                    })
+
+                Text(
+                    text = stringResource(id = R.string.description_card),
+                    modifier = Modifier
+                        .constrainAs(description) {
+                            top.linkTo(image.bottom)
+                            start.linkTo(parent.start)
+                            end.linkTo(likesIcon.start)
+                        },
+                    textAlign = TextAlign.Center,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.ic_like),
+                    contentDescription = stringResource(
+                        id = R.string.description_like
+                    ),
+                    modifier = Modifier
+                        .clickable { counter4++ }
+                        .constrainAs(likesIcon) {
+                            bottom.linkTo(description.bottom)
+                            start.linkTo(description.end)
+                            end.linkTo(image.end)
+                        }
+                )
+                Text(text = counter4.toString(), modifier = Modifier
+                    .padding(horizontal = 5.dp)
+                    .constrainAs(likes)
+                    {
+                        bottom.linkTo(likesIcon.bottom)
+                        start.linkTo(likesIcon.end)
+                    })
+            }
+        }
+
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Toolbar04(modifier: Modifier) {
+        val offset = Offset(5.0f, 10.0f)
+        TopAppBar(
+            colors = TopAppBarDefaults.smallTopAppBarColors(
+                containerColor = colorResource(id = R.color.background_toolbar_04)
+            ),
+            modifier = modifier,
+            title = {
+                Text(
+                    text = stringResource(id = R.string.title_toolbar_04),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    style = TextStyle(
+                        fontSize = 32.sp,
+                        shadow = Shadow(
+                            color = Color.White,
+                            offset = offset,
+                            blurRadius = 3f
+                        )
+                    )
+                )
+            }
+        )
+}
+
+@Composable
+fun View03() {
+    var counter3 by rememberSaveable {
+        mutableStateOf(0)
+    }
+
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = colorResource(id = R.color.background_card_03)
+        ),
+        modifier = Modifier.padding(16.dp, 12.dp)
+    ) {
+        ConstraintLayout {
+            val (title, image, description, toolbar3, likes, likesIcon) = createRefs()
+
+            Toolbar03(Modifier.constrainAs(toolbar3) {
+                top.linkTo(parent.top)
+                start.linkTo(parent.start)
+            })
+
+            Image(painter = painterResource(id = R.drawable.view01),
+                contentDescription = stringResource(id = R.string.description_image),
+                modifier = Modifier.constrainAs(image) {
+                    top.linkTo(toolbar3.bottom)
+                    start.linkTo(title.start)
+                    end.linkTo(title.end)
+                })
+
+            Text(
+                text = stringResource(id = R.string.description_card),
+                modifier = Modifier
+                    .constrainAs(description) {
+                        top.linkTo(image.bottom)
+                        start.linkTo(parent.start)
+                        end.linkTo(likesIcon.start)
+                    },
+                textAlign = TextAlign.Center,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+            Image(
+                painter = painterResource(id = R.drawable.ic_like),
+                contentDescription = stringResource(
+                    id = R.string.description_like
+                ),
+                modifier = Modifier
+                    .clickable { counter3++ }
+                    .constrainAs(likesIcon) {
+                        bottom.linkTo(description.bottom)
+                        start.linkTo(description.end)
+                        end.linkTo(image.end)
+                    }
+            )
+            Text(text = counter3.toString(), modifier = Modifier
+                .padding(horizontal = 5.dp)
+                .constrainAs(likes)
+                {
+                    bottom.linkTo(likesIcon.bottom)
+                    start.linkTo(likesIcon.end)
+                })
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Toolbar03(modifier: Modifier) {
+    val offset = Offset(5.0f, 10.0f)
+    TopAppBar(
+        colors = TopAppBarDefaults.smallTopAppBarColors(
+            containerColor = colorResource(id = R.color.background_toolbar_03)
+        ),
+        modifier = modifier,
+        title = {
+            Text(
+                text = stringResource(id = R.string.title_toolbar_03),
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.Center,
+                style = TextStyle(
+                    fontSize = 32.sp,
+                    shadow = Shadow(
+                        color = Color.White,
+                        offset = offset,
+                        blurRadius = 3f
+                    )
+                )
+            )
+        }
+    )
 }
 
 @Composable
