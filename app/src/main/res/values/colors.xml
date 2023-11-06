@@ -10,7 +10,9 @@
 
     <!--Toolbar-->
     <color name="background_toolbar_01">#427A93</color>
+    <color name="background_toolbar_02">#4CAF50</color>
 
     <!--Card-->
     <color name="background_card_01">#90D1ED</color>
+    <color name="background_card_02">#92E896</color>
 </resources>
