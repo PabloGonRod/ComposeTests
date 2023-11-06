@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--Toolbar-->
+    <color name="background_toolbar_01">#427A93</color>
+
+    <!--Card-->
+    <color name="background_card_01">#90D1ED</color>
 </resources>
