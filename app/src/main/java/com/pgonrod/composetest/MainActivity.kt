@@ -59,7 +59,9 @@ fun View01() {
         Image(
             painter = painterResource(id = R.drawable.ic_launcher_background),
             contentDescription = "Imagen de prueba",
-            modifier = Modifier.constrainAs(image)
+            modifier = Modifier.constrainAs(image){
+
+            }
         )
 
     }
