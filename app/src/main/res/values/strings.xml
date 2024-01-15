@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ComposeTest</string>
+
+    <string name="title_maintoolbar">Pruebas con Compose</string>
+
+    <string name="title_toolbar_01">Vista 01</string>
+    <string name="title_toolbar_02">Vista 02</string>
+    <string name="title_toolbar_03">Vista 03</string>
+    <string name="title_toolbar_04">Vista 04</string>
+
+
+    <string name="description_card">Esta es la descripcion de prueba</string>
+    <string name="description_image">Imagen de prueba</string>
+    <string name="description_like">Icono like</string>
 </resources>
